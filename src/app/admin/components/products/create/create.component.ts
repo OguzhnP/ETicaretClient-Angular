@@ -5,7 +5,7 @@ import { tick } from '@angular/core/testing';
 import { BaseComponent, SpinnerType } from 'src/app/base/base.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { AlertifyService, MessageType, Position } from 'src/app/services/admin/alertify.service';
-import { FileUploadOptions } from 'src/app/services/common/file-upload/file-upload.component';
+import { FileUploadOptions } from '../../../../services/common/file-upload/file-upload.component';
 
 @Component({
   selector: 'app-create',

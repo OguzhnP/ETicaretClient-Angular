@@ -8,6 +8,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminModule } from './admin/admin.module';
+import { FileUploadComponent } from './services/common/file-upload/file-upload.component';
+
 
 @NgModule({
   declarations: [
