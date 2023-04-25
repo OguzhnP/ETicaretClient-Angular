@@ -7,6 +7,8 @@ import { CustomToastrService, ToastrMessageType, ToastrPosition } from '../../ui
 import { MatDialog } from '@angular/material/dialog';
 import { FileUploadDialogComponent, FileUploadDialogState } from '../../../dialogs/file-upload-dialog/file-upload-dialog.component';
 import { DialogService } from '../dialog.service';
+import { NgxSpinner, NgxSpinnerService } from 'ngx-spinner';
+import { SpinnerType } from 'src/app/base/base.component';
 
 @Component({
   selector: 'app-file-upload',
@@ -20,7 +22,8 @@ export class FileUploadComponent {
     private alertify : AlertifyService,
     private toastr: CustomToastrService,
     private dialog: MatDialog,
-    private dialogService: DialogService
+    private dialogService: DialogService,
+    private spinner : NgxSpinnerService
     ) { }
 
 
@@ -42,6 +45,7 @@ export class FileUploadComponent {
       componentType: FileUploadDialogComponent,
       data:FileUploadDialogState.Yes,
       afterClosed  :()=>{
+        this.spinner.show(SpinnerType.SquareJelly);
         this.httpClientService.post({
           controller:this.options.controller,
           action:this.options.action,
@@ -63,6 +67,8 @@ export class FileUploadComponent {
               position:ToastrPosition.TopRight
             })
           }
+
+        this.spinner.hide(SpinnerType.SquareJelly);
         },
         (errorResponse: HttpErrorResponse)=>{
           const message: string="Dosyalar yüklenirken bir hata ile karşılaşılmıştır.";
@@ -80,9 +86,8 @@ export class FileUploadComponent {
               position:ToastrPosition.TopRight
             })
           }
-        }
-        );
-
+          this.spinner.hide(SpinnerType.SquareJelly);
+        }  );
       }
     });
 

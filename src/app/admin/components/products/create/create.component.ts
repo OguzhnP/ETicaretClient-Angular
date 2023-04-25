@@ -28,7 +28,6 @@ constructor(spinner: NgxSpinnerService,private productService: ProductService,pr
     controller:"products",
     explanation:"Resimleri sürükleyin veya seçin.",
     isAdminPage:true,
-    accept:".png, .jpg, .jpeg"
   };
 
   create( name: HTMLInputElement,stock: HTMLInputElement ,price: HTMLInputElement){
