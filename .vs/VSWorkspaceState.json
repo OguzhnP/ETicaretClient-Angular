@@ -6,9 +6,7 @@
     "\\src\\app\\admin",
     "\\src\\app\\admin\\components",
     "\\src\\app\\admin\\components\\products",
-    "\\src\\app\\dialogs",
-    "\\src\\app\\services\\common",
-    "\\src\\app\\services\\common\\file-upload"
+    "\\src\\app\\dialogs"
   ],
   "SelectedNode": "\\src\\app\\admin\\components\\components.module.ts",
   "PreviewInSolutionExplorer": false
