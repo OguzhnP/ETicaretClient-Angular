@@ -6,6 +6,8 @@ import { ProductService } from 'src/app/services/common/models/product.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { AlertifyService, MessageType, Position } from 'src/app/services/admin/alertify.service';
 import { MatPaginator } from '@angular/material/paginator';
+import { DialogService } from 'src/app/services/common/dialog.service';
+import { SelectProductImageDialogComponent } from 'src/app/dialogs/select-product-image-dialog/select-product-image-dialog.component';
 
 declare var $: any;
 
@@ -17,7 +19,7 @@ declare var $: any;
 export class ListComponent extends BaseComponent implements OnInit  {
 
 
-  constructor(private productService : ProductService, spinner: NgxSpinnerService, private alertifyService : AlertifyService) {
+  constructor(private productService : ProductService, spinner: NgxSpinnerService, private alertifyService : AlertifyService, private dialogService: DialogService) {
     super(spinner);
   }
 
@@ -41,10 +43,15 @@ export class ListComponent extends BaseComponent implements OnInit  {
   }
 
 
-  // delete(id,event){
-  //   const img : HTMLImageElement = event.srcElement;
-  //   $(img.parentElement.parentElement).fadeOut(1450);
-  // }
+  addProductImages(id: string){
+    this.dialogService.openDialog({
+      componentType : SelectProductImageDialogComponent,
+      data:id,
+      options:{
+        width : "1400px"
+      }
+    });
+  }
 
   async pageChanged(){
     await this.getProducts()

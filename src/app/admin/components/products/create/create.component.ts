@@ -23,12 +23,7 @@ constructor(spinner: NgxSpinnerService,private productService: ProductService,pr
   }
 
   @Output() createdProduct: EventEmitter<Create_Product> = new EventEmitter();
-  @Output() fileUploadOptions: Partial<FileUploadOptions> = {
-    action:"upload",
-    controller:"products",
-    explanation:"Resimleri sürükleyin veya seçin.",
-    isAdminPage:true,
-  };
+
 
   create( name: HTMLInputElement,stock: HTMLInputElement ,price: HTMLInputElement){
 

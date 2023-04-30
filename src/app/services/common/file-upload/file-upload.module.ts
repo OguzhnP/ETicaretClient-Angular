@@ -4,18 +4,21 @@ import { FileUploadComponent } from './file-upload.component';
 import { NgxFileDropModule } from 'ngx-file-drop';
 import { DialogModule } from 'src/app/dialogs/dialog.module';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { FileUploadDialogComponent } from 'src/app/dialogs/file-upload-dialog/file-upload-dialog.component';
 
 
 
 @NgModule({
   declarations: [
     FileUploadComponent,
+    FileUploadDialogComponent
   ],
   imports: [
     CommonModule,
     NgxFileDropModule,
-    DialogModule,
-    NgxSpinnerModule
+    MatDialogModule, MatButtonModule
   ],
   exports:[
     FileUploadComponent
