@@ -9,11 +9,8 @@ declare var $: any;
 export class AppComponent implements OnInit{
   title = 'ETicaretClient';
 
-  constructor(){
-
-  }
-  ngOnInit() {
-  }
+  constructor(){ }
+  ngOnInit() { }
 
 
 }
