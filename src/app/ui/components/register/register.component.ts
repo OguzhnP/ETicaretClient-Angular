@@ -17,13 +17,13 @@ export class RegisterComponent implements OnInit{
   ngOnInit(): void {
 
     this.frm = this.formBuilder.group({
-      adSoyad: ["",
+      nameSurname: ["",
       [
         Validators.required,
         Validators.maxLength(50),
         Validators.minLength(2)
       ]],
-      kullaniciAdi: ["",
+      username: ["",
       [
         Validators.required,
         Validators.maxLength(50),
@@ -35,19 +35,19 @@ export class RegisterComponent implements OnInit{
         Validators.maxLength(250),
         Validators.email
       ]],
-      sifre: ["",
+      password: ["",
       [
         Validators.required,
       ]],
-      sifreTekrar: ["",
+      passwordConfirm: ["",
       [
         Validators.required,
       ]],
 
     }, {
       validators:(group : AbstractControl):ValidationErrors | null=>{
-        let sifre=group.get("sifre").value;
-        let sifreTekrar=group.get("sifreTekrar").value;
+        let sifre=group.get("password").value;
+        let sifreTekrar=group.get("passwordConfirm").value;
         return sifre==sifreTekrar ? null : {notSame : true};
     }});
   }
@@ -57,7 +57,7 @@ export class RegisterComponent implements OnInit{
   }
 
   submitted: boolean=false;
-  onSubmitt(data : User){
+  onSubmitt(user : User){
     this.submitted=true;
 
 
