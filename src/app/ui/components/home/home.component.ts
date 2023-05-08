@@ -11,9 +11,8 @@ export class HomeComponent extends BaseComponent implements OnInit {
   constructor(spiner: NgxSpinnerService){
     super(spiner);
   }
-  
-  ngOnInit(): void {
-    this.showSpinner( SpinnerType.BallAtom);
+
+  ngOnInit(): void { 
   }
 
 }
