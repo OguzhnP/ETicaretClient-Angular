@@ -74,11 +74,11 @@ export class RegisterComponent extends BaseComponent implements OnInit {
     this.submitted=true;
 
 
-    if (this.frm.invalid) 
+    if (this.frm.invalid)
       return;
 
      const result: Create_User =  await this.userService.create(user);
-    
+
      if (result.succeeded) {
       this.toastrService.message(result.message,"Kullanıcı kaydı başarılı", {
         messageType:ToastrMessageType.Success,
@@ -91,7 +91,7 @@ export class RegisterComponent extends BaseComponent implements OnInit {
         position:ToastrPosition.TopRight,
       });
      }
-     
+
   }
 
 }
