@@ -16,9 +16,18 @@
       </div><br>
 
       <br>
-      <button type="submit" class="btn btn-success " (click)="login(txtUsernameOrEmail.value, txtPassword.value)">Giriş Yap</button>
+      <div class="row" style="justify-content: space-around;">
+        <div class="col-md-11">
+          <button type="submit" class="btn btn-success " (click)="login(txtUsernameOrEmail.value, txtPassword.value)">Giriş Yap</button>
+        </div>
+        <div class="col-md-1">
+          <asl-google-signin-button></asl-google-signin-button>
+        </div>
+
+      </div>
+
       <br><br>
-      <asl-google-signin-button></asl-google-signin-button>
+
   </div>
   <div class="col-md-3">  </div>
 
